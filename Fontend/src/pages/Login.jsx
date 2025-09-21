@@ -2,7 +2,8 @@ import React from "react";
 
 const Login = () => {
   const handleLogin = () => {
-    window.location.href = "http://localhost:5000/auth"; 
+    window.location.href =
+      "https://youtube-companion-dashboard-8gg0.onrender.com/auth";
   };
 
   return (

@@ -1,9 +1,11 @@
 import axios from "axios";
 
-const API_BASE = "http://localhost:5000";
+const API_BASE = "https://youtube-companion-dashboard-8gg0.onrender.com";
 
 export const fetchComments = async (videoId) => {
-  const res = await axios.get(`${API_BASE}/video/${videoId}/comments`, { withCredentials: true });
+  const res = await axios.get(`${API_BASE}/video/${videoId}/comments`, {
+    withCredentials: true,
+  });
   return res.data.comments;
 };
 
@@ -26,8 +28,11 @@ export const replyToComment = async (videoId, commentId, text) => {
 };
 
 export const deleteComment = async (videoId, commentId) => {
-  const res = await axios.delete(`${API_BASE}/video/${videoId}/comment/${commentId}`, {
-    withCredentials: true,
-  });
+  const res = await axios.delete(
+    `${API_BASE}/video/${videoId}/comment/${commentId}`,
+    {
+      withCredentials: true,
+    }
+  );
   return res.data;
 };
